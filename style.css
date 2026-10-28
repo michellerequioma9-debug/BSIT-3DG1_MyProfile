@@ -1,0 +1,581 @@
+/* =========================================
+   MICHELLE REQUIOMA — PROFILE WEBSITE
+   Color palette from the provided reference
+   ========================================= */
+
+:root {
+    --navy: #1B3B6F;
+    --blue: #2F6690;
+    --sky: #A3CEF1;
+    --cream: #F6E4C8;
+    --off-white: #FFF8EE;
+    --ink: #172333;
+    --muted: #647487;
+    --white: #FFFFFF;
+    --line: #DCE3E8;
+    --dark: #0B1622;
+    --pink: #EFA7A0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    line-height: 1.6;
+}
+
+.top-accent {
+    height: 5px;
+    background: var(--cream);
+}
+
+.site-header {
+    min-height: 96px;
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    padding: 18px 7%;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-mark {
+    width: 5px;
+    height: 52px;
+    display: block;
+    background: var(--cream);
+    border-radius: 4px;
+}
+
+.brand-school {
+    color: var(--cream);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.brand h1 {
+    color: var(--white);
+    font-size: 25px;
+    margin-top: 2px;
+}
+
+/* Navigation */
+
+.main-nav {
+    min-height: 70px;
+    background: #142433;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #31414f;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.main-nav a {
+    min-width: 115px;
+    padding: 23px 25px 19px;
+    color: #B9C5CF;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+    transition: 0.25s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--sky);
+}
+
+.main-nav a.active::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background: var(--pink);
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Main layout */
+
+.page-shell {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+.hero-section {
+    min-height: 620px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 75px;
+    padding: 85px 0;
+}
+
+.hero-copy h2 {
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(50px, 7vw, 82px);
+    line-height: 0.98;
+    margin-bottom: 13px;
+}
+
+.eyebrow {
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2.2px;
+    margin-bottom: 10px;
+}
+
+.role {
+    color: var(--blue);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.intro {
+    max-width: 610px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.quick-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.quick-facts span {
+    padding: 7px 12px;
+    border-radius: 30px;
+    background: var(--cream);
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.button.primary {
+    background: var(--navy);
+    color: white;
+}
+
+.button.primary:hover {
+    background: var(--blue);
+    transform: translateY(-2px);
+}
+
+.button.secondary {
+    border: 1px solid var(--navy);
+    color: var(--navy);
+}
+
+.button.secondary:hover {
+    background: var(--cream);
+}
+
+/* Profile card */
+
+.profile-card {
+    background: var(--white);
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(27, 59, 111, 0.10);
+    transform: rotate(1deg);
+}
+
+.photo-placeholder {
+    height: 360px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, var(--sky), var(--cream));
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.card-details {
+    padding: 18px 5px 5px;
+}
+
+.card-details p {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+}
+
+.card-details p:last-child {
+    border-bottom: 0;
+}
+
+.card-details span {
+    display: inline-block;
+    width: 85px;
+    color: var(--blue);
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/* Content sections */
+
+.content-section {
+    padding: 95px 0;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 75px;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+.info-card,
+.timeline-card {
+    display: flex;
+    gap: 25px;
+    background: var(--white);
+    padding: 30px;
+    margin-bottom: 18px;
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--cream);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(27, 59, 111, 0.06);
+}
+
+.date-badge,
+.tag {
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.3px;
+    white-space: nowrap;
+}
+
+.info-card h3,
+.timeline-card h3,
+.small-card h3,
+.cert-card h3 {
+    color: var(--navy);
+    margin: 4px 0 7px;
+}
+
+.muted,
+.small-card p,
+.timeline-card p,
+.cert-card p {
+    color: var(--muted);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.small-card {
+    background: var(--white);
+    padding: 30px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    transition: 0.25s ease;
+}
+
+.small-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(27, 59, 111, 0.10);
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    background: var(--cream);
+    color: var(--navy);
+    border-radius: 50%;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.timeline-dot {
+    flex: 0 0 16px;
+    height: 16px;
+    margin-top: 4px;
+    background: var(--sky);
+    border: 3px solid var(--navy);
+    border-radius: 50%;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.cert-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--white);
+    padding: 25px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+
+.cert-number {
+    color: var(--blue);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+}
+
+.cert-note {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 18px;
+}
+
+/* Footer */
+
+footer {
+    background: var(--dark);
+    color: #AEBBC5;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+    .main-nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+
+    .main-nav a {
+        min-width: auto;
+        padding: 20px 18px;
+        white-space: nowrap;
+    }
+
+    .hero-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 65px 0;
+    }
+
+    .profile-card {
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .card-grid,
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 500px) {
+    .site-header {
+        padding: 16px 5%;
+    }
+
+    .brand-school {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero-copy h2 {
+        font-size: 50px;
+    }
+
+    .page-shell {
+        width: 88%;
+    }
+
+    .info-card,
+    .timeline-card {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Resume page */
+
+.resume-hero {
+    min-height: 470px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 70px;
+    padding: 85px 0;
+}
+
+.resume-hero h2 {
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(50px, 7vw, 78px);
+    line-height: 0.98;
+    margin-bottom: 13px;
+}
+
+.resume-contact {
+    background: var(--cream);
+    padding: 30px;
+    border-radius: 18px;
+    border-left: 5px solid var(--navy);
+}
+
+.resume-contact p {
+    color: var(--navy);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(27, 59, 111, 0.18);
+}
+
+.resume-contact p:last-child {
+    border-bottom: 0;
+}
+
+.resume-contact strong {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.resume-section {
+    padding: 65px 0;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 75px;
+}
+
+.resume-section h2 {
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 38px;
+    margin-bottom: 28px;
+}
+
+.resume-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 25px;
+    background: var(--white);
+    padding: 27px 30px;
+    margin-bottom: 15px;
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--sky);
+    border-radius: 14px;
+}
+
+.resume-year {
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+}
+
+.resume-item h3 {
+    color: var(--navy);
+    margin-bottom: 5px;
+}
+
+.resume-item p {
+    color: var(--muted);
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-list span {
+    padding: 11px 16px;
+    background: var(--white);
+    color: var(--navy);
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.objective-box {
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 30px;
+    border-left: 5px solid var(--navy);
+}
+
+.objective-box p {
+    color: var(--navy);
+}
+
+.resume-actions {
+    padding: 15px 0 90px;
+}
+
+@media (max-width: 800px) {
+    .resume-hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .resume-item {
+        grid-template-columns: 1fr;
+        gap: 7px;
+    }
+}
